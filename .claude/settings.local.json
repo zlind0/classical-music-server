@@ -3,7 +3,8 @@
     "allow": [
       "Bash(docker compose build *)",
       "Bash(curl -s http://127.0.0.1:5173)",
-      "Bash(docker compose logs *)"
+      "Bash(docker compose logs *)",
+      "Bash(docker compose up *)"
     ]
   }
 }
