@@ -11,7 +11,7 @@ python-dotenv==1.0.0
 mutagen==1.46.0
 python-multipart
 alembic==1.12.1
-jwt
+PyJWT>=2.8.0
 
 # Testing
 pytest==7.4.3
