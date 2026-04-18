@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import { resolve } from 'path';
 
 export default defineConfig({
+  appType: 'spa',
   plugins: [
     vue(),
     VitePWA({
@@ -47,14 +48,15 @@ export default defineConfig({
     },
   },
   server: {
-    host: true,
+    host: '0.0.0.0',
+    middlewareMode: false,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: process.env.API_URL || 'http://localhost:8000',
         changeOrigin: true,
       },
       '/v1': {
-        target: 'http://localhost:8000',
+        target: process.env.API_URL || 'http://localhost:8000',
         changeOrigin: true,
       },
     },
